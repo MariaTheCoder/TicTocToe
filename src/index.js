@@ -9,9 +9,9 @@ After the value i is passed to child from parent,´we can access the value by us
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
+      <button className="square" onClick={() => console.log('click')}>
         {this.props.value}
-      </button>
+      </button >
     );
   }
 }
@@ -33,7 +33,8 @@ class Board extends React.Component {
       <div>
         <div className="status">{status}</div>
         <div className="board-row">
-          {this.renderSquare(0)}
+          {/* first square is a direct component call, just as an example */}
+          {<Square value={0} />}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
