@@ -7,6 +7,13 @@ The Square component is a child to the Board component.
 After the value i is passed to child from parent,´we can access the value by using this.props.value
 */
 class Square extends React.Component {
+  constructor(props) {
+    ssuper(props);
+    this.state = {
+      valuel: null,
+    };
+  }
+
   render() {
     return (
       <button className="square" onClick={() => console.log('click')}>
