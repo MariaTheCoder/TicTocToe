@@ -32,6 +32,12 @@ class Board extends React.Component {
     };
   }
 
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    this.setState({ squares: squares });
+  }
+
   renderSquare(i) {
     return (
       <Square
@@ -49,7 +55,7 @@ class Board extends React.Component {
         <div className="status">{status}</div>
         <div className="board-row">
           {/* first square is a direct component call, just as an example */}
-          {<Square value={0} />}
+          {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
