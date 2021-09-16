@@ -8,7 +8,7 @@ After the value i is passed to child from parent,´we can access the value by us
 */
 class Square extends React.Component {
   constructor(props) {
-    ssuper(props);
+    super(props);
     this.state = {
       valuel: null,
     };
