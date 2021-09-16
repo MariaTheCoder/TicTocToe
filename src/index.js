@@ -87,6 +87,16 @@ class Board extends React.Component {
 The game component is a parent to the board component.  
 */
 class Game extends React.Component {
+  construtor(props) {
+    super(props);
+    this.state = {
+      history: [{
+        squares: Array(9).fill(null),
+      }],
+      xIsNext: true,
+    };
+  }
+
   render() {
     return (
       <div className="game">
