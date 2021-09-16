@@ -96,6 +96,7 @@ class Game extends React.Component {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
+    const draw = isBoardFilledOut(current.squares);
 
     const moves = history.map((step, move) => {
       const desc = move ? `Go to move# ${move}` : `Go to game start`;
@@ -109,6 +110,8 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = `Winner: ${winner}`;
+    } else if (draw) {
+      status = `None of the players won this game...`;
     } else {
       status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
     }
@@ -155,4 +158,16 @@ function calculateWinner(squares) {
     }
   }
   return null;
+}
+
+function isBoardFilledOut(squares) {
+  let count = 0;
+
+  squares.forEach(square => {
+    if (!square) return false;
+    count++;
+  });
+
+  if (count === 9)
+    return true;
 }
