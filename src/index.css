@@ -36,6 +36,10 @@ ol, ul {
   outline: none;
 }
 
+.square:hover {
+  border: 2px solid black;
+}
+
 .kbd-navigation .square:focus {
   background: #ddd;
 }
