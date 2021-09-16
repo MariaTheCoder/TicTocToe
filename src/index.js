@@ -6,17 +6,12 @@ import './index.css';
 The Square component is a child to the Board component. 
 After the value i is passed to child from parent,´we can access the value by using this.props.value
 */
-class Square extends React.Component {
-  render() {
-    return (
-      <button
-        className="square"
-        onClick={() => this.props.onClick()}
-      >
-        {this.props.value}
-      </button >
-    );
-  }
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
 
 /* 
