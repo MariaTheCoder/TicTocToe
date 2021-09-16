@@ -32,6 +32,13 @@ We want to pass values from the parent Board component to the child Square compo
 Therefore we edit Board's renderSquare method to take a parameter i and set i to be the value of square.
 */
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+    };
+  }
+
   renderSquare(i) {
     return <Square value={i} />;
   }
